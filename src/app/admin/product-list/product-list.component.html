@@ -1,0 +1,23 @@
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+
+      <th>Tên sản phẩm</th>
+      <th>Giá</th>
+      <th>Ảnh</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody *ngIf="product && product.length">
+    <tr *ngFor="let products of product; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ products.name }}</td>
+      <td>{{ products.price }}</td>
+      <td><img src="{{ products.image }}" width="200" height="200"/></td>
+      <td> <button class=" btn btn-danger" (click)="onhandlermove(products.id)">xoa</button></td>
+      <td> <a routerLink="edit/{{products.id}}"><button class=" btn btn-danger" >sua</button></a></td>
+    </tr>
+  </tbody>
+</table>
